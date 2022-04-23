@@ -5,6 +5,7 @@
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h1 mb-0 text-gray-800">Laporan Data Balita Posyandu Margorejo</h1>
+            <div id="printBtn" class="d-sm-inline-block"></div>
             {{-- <a href="{{ route('users.create') }}" class="d-none d-sm-inline-block btn btn-primary shadow px-3 py-2"><i
                     class="fas fa-plus fa-sm text-white-100 mr-2"></i> Tambah Balita</a> --}}
         </div>
@@ -14,7 +15,7 @@
                     <div class="card-body">
                         <div class="table-responsive">
                             <div>
-                                <table class="table align-items-center" id="dataTable">
+                                <table class="table align-items-center" id="dataReport">
                                     <thead class="thead-light">
                                         <tr>
                                             <th scope="col" class="sort" data-sort="name" style="width:10%">No
