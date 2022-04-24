@@ -1,29 +1,32 @@
 @extends('layouts.home', ['class' => 'bg-default'])
 
 @section('content')
-    <div class="header bg-gradient-primary py-7 py-lg-8">
+    <div class="header bg-gradient-posyandu pt-9 pb-7">
         <div class="container">
             <div class="row justify-content-center my-5">
                 <div class="col-12">
-                    <h4 class="text-center text-white">
+                    <h4 class="text-center text-secondary font-weight-bolder mb-1">
                         Alamat Posyandu Margorejo
-                        <br>
+                    </h4>
+                    <h3 class="text-center text-white mb-4" style="font-size: 1.2rem">
                         Jl. Margorejo Masjid No.32, Margorejo,
                         Kec. Wonocolo,
                         <br>
                         Kota SBY, Jawa Timur 60238, Indonesia
                         Kota Surabaya, Jawa Timur
-                    </h4>
-                    <h4 class="text-center text-white my-3">
+                    </h3>
+                    <h4 class="text-center text-secondary font-weight-bolder mb-1">
                         Email Posyandu Margorejo
-                        <br>
+                    </h4>
+                    <h3 class="text-center text-white mb-4" style="font-size: 1.2rem">
                         posyandumargorejo@gmail.com
-                    </h4>
-                    <h4 class="text-center text-white">
+                    </h3>
+                    <h4 class="text-center text-secondary font-weight-bolder mb-1">
                         No Telp Posyandu Margorejo
-                        <br>
-                        (031) 8433270
                     </h4>
+                    <h3 class="text-center text-white mb-4" style="font-size: 1.2rem">
+                        (031) 8433270
+                    </h3>
                 </div>
             </div>
         </div>

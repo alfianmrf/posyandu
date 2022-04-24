@@ -16737,7 +16737,8 @@ textarea[resize="horizontal"] {
         border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     }
     .navbar-collapse .collapse-brand img {
-        height: 36px;
+        /* height: 36px; */
+        height: 45px;
     }
     .navbar-collapse .collapse-close {
         text-align: right;
@@ -18185,4 +18186,18 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 .dt-buttons {
     display: inline-block;
     margin-bottom: 20px;
+}
+
+@media only screen and (min-width: 768px) {
+    .user-logo {
+        height: 10rem !important;
+    }
+}
+
+.user-logo {
+    height: 6rem;
+}
+
+.bg-gradient-posyandu {
+    background: linear-gradient(87deg, #1eb3ef 0, #1fb3cd 100%) !important;
 }

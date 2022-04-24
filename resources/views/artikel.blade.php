@@ -1,11 +1,11 @@
 @extends('layouts.home', ['class' => 'bg-default'])
 
 @section('content')
-    <div class="header bg-gradient-primary py-7 py-lg-8">
+    <div class="header bg-gradient-posyandu pt-md-8 py-7">
         <div class="container">
             <div class="row my-5">
                 @foreach ($artikels as $artikel)
-                    <div class="col-sm col-md-4">
+                    <div class="col-sm-6 col-md-4">
                         <a href="{{ $artikel['link'] }}" class="">
                             <img src="{{ URL::to('img/artikel/' . $artikel['img']) }}" alt="First image"
                                 class="img-thumbnail">

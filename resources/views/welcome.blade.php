@@ -1,7 +1,7 @@
 @extends('layouts.home', ['class' => 'bg-default'])
 
 @section('content')
-    <div class="header bg-gradient-primary py-7 py-lg-8">
+    <div class="header bg-gradient-posyandu pt-9 pb-7">
         <div class="container">
             <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
                 <ol class="carousel-indicators">
@@ -9,43 +9,47 @@
                     <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                     <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
                 </ol>
-                <div class="carousel-inner">
-                    {{-- <div class="carousel-item h-100 active">
-                        <img class="d-block h-100" src="<?= URL::to('/img/welcome-slider/1.jpg') ?>" alt="First slide">
+                <div class="row justify-content-center">
+                    <div class="col-md-9">
+                        <div class="carousel-inner">
+                            {{-- <div class="carousel-item h-100 active">
+                                <img class="d-block h-100" src="<?= URL::to('/img/welcome-slider/1.jpg') ?>" alt="First slide">
+                            </div>
+                            <div class="carousel-item h-100">
+                                <img class="d-block h-100" src="<?= URL::to('/img/welcome-slider/2.jpg') ?>" alt="Second slide">
+                            </div> --}}
+                            {{-- <div class="carousel-item active">
+                                <img class="d-block w-100 h-100" src="<?= URL::to('/img/welcome-slider/1-1.jpg') ?>"
+                                    alt="Third slide">
+                            </div> --}}
+                            <div class="carousel-item active">
+                                <img class="d-block w-100 h-100" src="<?= URL::to('/img/welcome-slider/2_rev.jpg') ?>"
+                                    alt="Third slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100 h-100" src="<?= URL::to('/img/welcome-slider/3_rev.jpg') ?>"
+                                    alt="Third slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100 h-100" src="<?= URL::to('/img/welcome-slider/4_rev.jpg') ?>"
+                                    alt="Forth slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100 h-100" src="<?= URL::to('/img/welcome-slider/5_rev.jpeg') ?>"
+                                    alt="Fifth slide">
+                            </div>
+                            {{-- <div class="carousel-item">
+                                <img class="d-block w-100"
+                                    src="https://puskesmasdemak1.com/storage/2021/01/Hero-Banner-Placeholder-Light-1024x480-1.png"
+                                    alt="Second slide">
+                            </div>
+                            <div class="carousel-item">
+                                <img class="d-block w-100"
+                                    src="https://puskesmasdemak1.com/storage/2021/01/Hero-Banner-Placeholder-Light-1024x480-1.png"
+                                    alt="Third slide">
+                            </div> --}}
+                        </div>
                     </div>
-                    <div class="carousel-item h-100">
-                        <img class="d-block h-100" src="<?= URL::to('/img/welcome-slider/2.jpg') ?>" alt="Second slide">
-                    </div> --}}
-                    <div class="carousel-item active">
-                        <img class="d-block w-100 h-100" src="<?= URL::to('/img/welcome-slider/1-1.jpg') ?>"
-                            alt="Third slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100 h-100" src="<?= URL::to('/img/welcome-slider/2-1.jpg') ?>"
-                            alt="Third slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100 h-100" src="<?= URL::to('/img/welcome-slider/3.jpg') ?>"
-                            alt="Third slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100 h-100" src="<?= URL::to('/img/welcome-slider/4.jpg') ?>"
-                            alt="Forth slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100 h-100" src="<?= URL::to('/img/welcome-slider/5.jpeg') ?>"
-                            alt="Fifth slide">
-                    </div>
-                    {{-- <div class="carousel-item">
-                        <img class="d-block w-100"
-                            src="https://puskesmasdemak1.com/storage/2021/01/Hero-Banner-Placeholder-Light-1024x480-1.png"
-                            alt="Second slide">
-                    </div>
-                    <div class="carousel-item">
-                        <img class="d-block w-100"
-                            src="https://puskesmasdemak1.com/storage/2021/01/Hero-Banner-Placeholder-Light-1024x480-1.png"
-                            alt="Third slide">
-                    </div> --}}
                 </div>
                 <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -57,7 +61,7 @@
                 </a>
             </div>
             <div class="row justify-content-center my-5">
-                <div class="col-12">
+                <div class="col-md-6">
                     <p class="text-white font-weight-normal text-justify">
                         Posyandu adalah wadah pemeliharaan kesehatan yang dilakukan dari, oleh dan untuk masyarakat yang
                         dibimbing petugas terkait. (Departemen Kesehatan RI. 2006).
@@ -77,6 +81,8 @@
                         Kegiatan Pokok Posyandu: KIA, KB, Imunisasi, Gizi, Penanggulangan diare (Bagian Kependudukan dan
                         Biostatistik FKM USU. 2007).
                     </p>
+                </div>
+                <div class="col-md-6">
                     <p class="text-white font-weight-normal text-justify">
                         Pelaksanaan Layanan Posyandu <br>
                         Pada hari buka posyandu dilakukan pelayanan masyarakat dengan sistem 5 meja yaitu:

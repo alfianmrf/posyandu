@@ -149,7 +149,8 @@
                             <label for="age" class="form-control-label">Umur</label>
                         </div>
                         <div class="col-lg-8 col-md-12">
-                            <input required class="form-control @error('age') is-invalid @enderror" type="number" min="0"
+                            <input @can('user') readonly @endcan required
+                                class="form-control @error('age') is-invalid @enderror" type="number" min="0"
                                 placeholder="Masukkan Usia Balita (bulan)" id="age" name="age"
                                 value="{{ old('age', $growth->age) }}">
                             @error('age')
@@ -164,9 +165,10 @@
                             <label for="weight" class="form-control-label">Berat Badan Terakhir</label>
                         </div>
                         <div class="col-lg-8 col-md-12">
-                            <input required class="form-control @error('weight') is-invalid @enderror" type="number"
-                                min="0" placeholder="Masukkan Berat Badan Terakhir Balita" id="last_weight" step=".01"
-                                name="weight" value="{{ old('weight', $growth->weight) }}">
+                            <input @can('user') readonly @endcan required
+                                class="form-control @error('weight') is-invalid @enderror" type="number" min="0"
+                                placeholder="Masukkan Berat Badan Terakhir Balita" id="last_weight" step=".01" name="weight"
+                                value="{{ old('weight', $growth->weight) }}">
                             @error('weight')
                                 <div class="invalid-feedback">
                                     {{ $message }}
@@ -179,8 +181,9 @@
                             <label for="height" class="form-control-label">Tinggi Badan Terakhir</label>
                         </div>
                         <div class="col-lg-8 col-md-12">
-                            <input required class="form-control @error('height') is-invalid @enderror" type="number"
-                                min="0" placeholder="Masukkan Tinggi Badan Terakhir Balita" id="last_height" step=".01"
+                            <input @can('user') readonly @endcan required
+                                class="form-control @error('height') is-invalid @enderror" type="number" min="0"
+                                placeholder="Masukkan Tinggi Badan Terakhir Balita" id="last_height" step=".01"
                                 name="height" value="{{ old('height', $growth->height) }}">
                             @error('height')
                                 <div class="invalid-feedback">
