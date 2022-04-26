@@ -18201,3 +18201,17 @@ html:not([dir="rtl"]) .noUi-horizontal .noUi-handle {
 .bg-gradient-posyandu {
     background: linear-gradient(87deg, #1eb3ef 0, #1fb3cd 100%) !important;
 }
+
+@media print {
+    #btn-container {
+        display: none;
+    }
+
+    h1 {
+        font-size: 50px !important;
+    }
+
+    table tr td {
+        font-size: 32px !important;
+    }
+}

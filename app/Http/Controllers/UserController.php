@@ -5,11 +5,11 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Agenda;
 use App\Models\Balita;
+use App\Models\Growth;
 use App\Models\Participate;
 use GuzzleHttp\Psr7\Request;
 use App\Http\Requests\UserRequest;
 use App\Http\Controllers\Controller;
-use App\Models\Growth;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -33,7 +33,7 @@ class UserController extends Controller
     public function chart()
     {
         $balita = Balita::where('user_id', Auth::user()->id)->first();
-        $growths = Growth::where('balita_id', $balita->id)->get()->take(12);
+        $growths = Growth::where('balita_id', $balita->id)->OrderBy('control_date')->get()->take(12);
 
         $months = [];
         $weight = [];

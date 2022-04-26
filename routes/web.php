@@ -68,6 +68,7 @@ Route::group(['middleware' => 'auth'], function () {
 	Route::get('balita/{id}', [AdminController::class, 'balitaDetail'])->name('balita.detail');
 	Route::get('balita/{id}/edit', [BalitaController::class, 'edit'])->name('balita.edit');
 	Route::put('/balita/{id}/update', [BalitaController::class, 'update']);
+	Route::get('pdf/balita', [UserController::class, 'printDetail'])->name('balita.print');
 
 	// Home
 	Route::get('home', [AdminController::class, 'index'])->name('home');

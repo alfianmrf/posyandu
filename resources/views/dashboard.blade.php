@@ -10,80 +10,82 @@
         <div class="col-xl-12 mb-5 mb-xl-0">
             @can('user')
                 @if ($balita && $lastGrowth)
-                    <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h1 mb-0 text-gray-800">Data Balita Anda</h1>
-                        <div class="btn-container">
-                            <a href="{{ route('balita.edit', $balita->id) }}"
-                                class="d-none d-sm-inline-block btn btn-warning shadow px-3 py-2"><i
-                                    class="fas fa-edit fa-sm text-white-100 mr-2"></i> Edit Data Balita</a>
-                            <a href="{{ route('balita.growth', $balita->id) }}"
-                                class="d-none d-sm-inline-block btn btn-primary shadow px-3 py-2"><i
-                                    class="fas fa-table fa-sm text-white-100 mr-2"></i> Data Perkembangan</a>
+                    <div id="printArea">
+                        <div class="d-sm-flex align-items-center justify-content-between mb-4">
+                            <h1 class="h1 mb-0 text-gray-800">Data Balita Anda</h1>
+                            <div class="btn-container" id="btn-container">
+                                <a href="{{ route('balita.edit', $balita->id) }}"
+                                    class="d-none d-sm-inline-block btn btn-warning shadow px-3 py-2"><i
+                                        class="fas fa-edit fa-sm text-white-100 mr-2"></i> Edit Data Balita</a>
+                                <a href="{{ route('balita.growth', $balita->id) }}"
+                                    class="d-none d-sm-inline-block btn btn-primary shadow px-3 py-2"><i
+                                        class="fas fa-table fa-sm text-white-100 mr-2"></i> Data Perkembangan</a>
+                            </div>
                         </div>
+                        <table>
+                            <tr>
+                                <td>No KMS </td>
+                                <td class="px-3"> : </td>
+                                <td>{{ $balita->no_kms }}</td>
+                            </tr>
+                            <tr>
+                                <td>Nama Lengkap Balita </td>
+                                <td class="px-3"> : </td>
+                                <td>{{ $balita->balita_name }}</td>
+                            </tr>
+                            <tr>
+                                <td>Nama Ayah Balita </td>
+                                <td class="px-3"> : </td>
+                                <td>{{ $balita->father_name }}</td>
+                            </tr>
+                            <tr>
+                                <td>Nama Ibu Balita </td>
+                                <td class="px-3"> : </td>
+                                <td>{{ $balita->mother_name }}</td>
+                            </tr>
+                            <tr>
+                                <td>Alamat Balita </td>
+                                <td class="px-3"> : </td>
+                                <td>{{ $balita->address }}</td>
+                            </tr>
+                            <tr>
+                                <td>No. Telp Orang Tua </td>
+                                <td class="px-3"> : </td>
+                                <td>{{ $balita->telp_numb }}</td>
+                            </tr>
+                            <tr>
+                                <td>Tempat, Tanggal Lahir </td>
+                                <td class="px-3"> : </td>
+                                <td>{{ $balita->city_born }},
+                                    {{ date('d-m-Y', strtotime($balita->date_born)) }}</td>
+                            </tr>
+                            <tr>
+                                <td>Jenis Kelamin Balita</td>
+                                <td class="px-3"> : </td>
+                                <td>{{ $balita->gender }}</td>
+                            </tr>
+                            <tr>
+                                <td>Umur Balita</td>
+                                <td class="px-3"> : </td>
+                                <td>{{ $lastGrowth->age }}</td>
+                            </tr>
+                            <tr>
+                                <td>Berat Badan Balita</td>
+                                <td class="px-3"> : </td>
+                                <td>{{ $lastGrowth->weight }}</td>
+                            </tr>
+                            <tr>
+                                <td>Tinggi Badan Balita</td>
+                                <td class="px-3"> : </td>
+                                <td>{{ $lastGrowth->height }}</td>
+                            </tr>
+                            <tr>
+                                <td>Status Gizi Balita</td>
+                                <td class="px-3"> : </td>
+                                <td>{{ $lastGrowth->gizi_score }} - {{ $lastGrowth->gizi_status }}</td>
+                            </tr>
+                        </table>
                     </div>
-                    <table>
-                        <tr>
-                            <td>No KMS </td>
-                            <td class="px-3"> : </td>
-                            <td>{{ $balita->no_kms }}</td>
-                        </tr>
-                        <tr>
-                            <td>Nama Lengkap Balita </td>
-                            <td class="px-3"> : </td>
-                            <td>{{ $balita->balita_name }}</td>
-                        </tr>
-                        <tr>
-                            <td>Nama Ayah Balita </td>
-                            <td class="px-3"> : </td>
-                            <td>{{ $balita->father_name }}</td>
-                        </tr>
-                        <tr>
-                            <td>Nama Ibu Balita </td>
-                            <td class="px-3"> : </td>
-                            <td>{{ $balita->mother_name }}</td>
-                        </tr>
-                        <tr>
-                            <td>Alamat Balita </td>
-                            <td class="px-3"> : </td>
-                            <td>{{ $balita->address }}</td>
-                        </tr>
-                        <tr>
-                            <td>No. Telp Orang Tua </td>
-                            <td class="px-3"> : </td>
-                            <td>{{ $balita->telp_numb }}</td>
-                        </tr>
-                        <tr>
-                            <td>Tempat, Tanggal Lahir </td>
-                            <td class="px-3"> : </td>
-                            <td>{{ $balita->city_born }},
-                                {{ date('d-m-Y', strtotime($balita->date_born)) }}</td>
-                        </tr>
-                        <tr>
-                            <td>Jenis Kelamin Balita</td>
-                            <td class="px-3"> : </td>
-                            <td>{{ $balita->gender }}</td>
-                        </tr>
-                        <tr>
-                            <td>Umur Balita</td>
-                            <td class="px-3"> : </td>
-                            <td>{{ $lastGrowth->age }}</td>
-                        </tr>
-                        <tr>
-                            <td>Berat Badan Balita</td>
-                            <td class="px-3"> : </td>
-                            <td>{{ $lastGrowth->weight }}</td>
-                        </tr>
-                        <tr>
-                            <td>Tinggi Badan Balita</td>
-                            <td class="px-3"> : </td>
-                            <td>{{ $lastGrowth->height }}</td>
-                        </tr>
-                        <tr>
-                            <td>Status Gizi Balita</td>
-                            <td class="px-3"> : </td>
-                            <td>{{ $lastGrowth->gizi_score }} - {{ $lastGrowth->gizi_status }}</td>
-                        </tr>
-                    </table>
                 @else
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
                         <h1 class="h1 mb-0 text-gray-800">
@@ -323,255 +325,17 @@
                     </div>
                 </div>
             @endcan
+
+            @can('user')
+                {{-- <a href="{{ route('balita.print') }}" target="_blank" class="btn btn-danger mt-4 text-white">
+                    Print
+                </a> --}}
+                <button target="_blank" class="btn btn-danger mt-4 text-white" onclick="printData('printArea')">
+                    Print
+                </button>
+            @endcan
         </div>
-        {{-- <div class="col-xl-4">
-                <div class="card shadow">
-                    <div class="card-header bg-transparent">
-                        <div class="row align-items-center">
-                            <div class="col">
-                                <h6 class="text-uppercase text-muted ls-1 mb-1">Performance</h6>
-                                <h2 class="mb-0">Total orders</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-body">
-                        <!-- Chart -->
-                        <div class="chart">
-                            <canvas id="chart-orders" class="chart-canvas"></canvas>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
     </div>
-    {{-- <div class="row mt-5">
-            <div class="col-xl-8 mb-5 mb-xl-0">
-                <div class="card shadow">
-                    <div class="card-header border-0">
-                        <div class="row align-items-center">
-                            <div class="col">
-                                <h3 class="mb-0">Page visits</h3>
-                            </div>
-                            <div class="col text-right">
-                                <a href="#!" class="btn btn-sm btn-primary">See all</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="table-responsive">
-                        <!-- Projects table -->
-                        <table class="table align-items-center table-flush">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th scope="col">Page name</th>
-                                    <th scope="col">Visitors</th>
-                                    <th scope="col">Unique users</th>
-                                    <th scope="col">Bounce rate</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">
-                                        /argon/
-                                    </th>
-                                    <td>
-                                        4,569
-                                    </td>
-                                    <td>
-                                        340
-                                    </td>
-                                    <td>
-                                        <i class="fas fa-arrow-up text-success mr-3"></i> 46,53%
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        /argon/index.html
-                                    </th>
-                                    <td>
-                                        3,985
-                                    </td>
-                                    <td>
-                                        319
-                                    </td>
-                                    <td>
-                                        <i class="fas fa-arrow-down text-warning mr-3"></i> 46,53%
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        /argon/charts.html
-                                    </th>
-                                    <td>
-                                        3,513
-                                    </td>
-                                    <td>
-                                        294
-                                    </td>
-                                    <td>
-                                        <i class="fas fa-arrow-down text-warning mr-3"></i> 36,49%
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        /argon/tables.html
-                                    </th>
-                                    <td>
-                                        2,050
-                                    </td>
-                                    <td>
-                                        147
-                                    </td>
-                                    <td>
-                                        <i class="fas fa-arrow-up text-success mr-3"></i> 50,87%
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        /argon/profile.html
-                                    </th>
-                                    <td>
-                                        1,795
-                                    </td>
-                                    <td>
-                                        190
-                                    </td>
-                                    <td>
-                                        <i class="fas fa-arrow-down text-danger mr-3"></i> 46,53%
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4">
-                <div class="card shadow">
-                    <div class="card-header border-0">
-                        <div class="row align-items-center">
-                            <div class="col">
-                                <h3 class="mb-0">Social traffic</h3>
-                            </div>
-                            <div class="col text-right">
-                                <a href="#!" class="btn btn-sm btn-primary">See all</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="table-responsive">
-                        <!-- Projects table -->
-                        <table class="table align-items-center table-flush">
-                            <thead class="thead-light">
-                                <tr>
-                                    <th scope="col">Referral</th>
-                                    <th scope="col">Visitors</th>
-                                    <th scope="col"></th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">
-                                        Facebook
-                                    </th>
-                                    <td>
-                                        1,480
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <span class="mr-2">60%</span>
-                                            <div>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-gradient-danger" role="progressbar"
-                                                        aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"
-                                                        style="width: 60%;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        Facebook
-                                    </th>
-                                    <td>
-                                        5,480
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <span class="mr-2">70%</span>
-                                            <div>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-gradient-success" role="progressbar"
-                                                        aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"
-                                                        style="width: 70%;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        Google
-                                    </th>
-                                    <td>
-                                        4,807
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <span class="mr-2">80%</span>
-                                            <div>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-gradient-primary" role="progressbar"
-                                                        aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"
-                                                        style="width: 80%;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        Instagram
-                                    </th>
-                                    <td>
-                                        3,678
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <span class="mr-2">75%</span>
-                                            <div>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-gradient-info" role="progressbar"
-                                                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"
-                                                        style="width: 75%;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">
-                                        twitter
-                                    </th>
-                                    <td>
-                                        2,645
-                                    </td>
-                                    <td>
-                                        <div class="d-flex align-items-center">
-                                            <span class="mr-2">30%</span>
-                                            <div>
-                                                <div class="progress">
-                                                    <div class="progress-bar bg-gradient-warning" role="progressbar"
-                                                        aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"
-                                                        style="width: 30%;"></div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div> --}}
 
     @include('layouts.footers.auth')
     </div>
@@ -579,8 +343,33 @@
 
 @push('js')
     <script src="/js/calculate.js"></script>
+
     <script>
         let dataUmur = {{ json_encode($dataUmur) }};
+
+        function printData(id) {
+
+            var printContent = document.getElementById(id).innerHTML;
+            var originalContent = document.body.innerHTML;
+
+            document.body.innerHTML = printContent;
+
+            // window.focus();
+            window.print();
+
+            document.innerHTML = originalContent;
+
+            window.close();
+        }
+
+        window.matchMedia('print').addListener(function(media) {
+            if (media.matches) {
+                // window.location.reload(true);
+            } else {
+                window.location.reload(true);
+                //location.reload();
+            }
+        });
     </script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.min.js"></script>
     <script src="{{ asset('argon') }}/vendor/chart.js/dist/Chart.extension.js"></script>

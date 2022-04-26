@@ -50,8 +50,8 @@
                                                             <form action="/kegiatan/{{ $agenda->id }}" method="post"
                                                                 class="d-inline">
                                                                 @csrf
-                                                                <button class="btn btn-primary border-0"
-                                                                    type="submit">Hadir</button>
+                                                                <button class="btn btn-primary border-0" type="submit"
+                                                                    @if ($agenda->agenda_date >= date('Y-m-d H:i:s')) disabled @endif>Hadir</button>
                                                             </form>
                                                         @endif
                                                     </td>

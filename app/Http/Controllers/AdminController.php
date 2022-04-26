@@ -123,9 +123,17 @@ class AdminController extends Controller
 
     public function userUpdate(Request $request, $id)
     {
+        $user = User::find($id);
+
+        if ($user->email == $request->email) {
+            $rules = 'required|email';
+        } else {
+            $rules = 'required|email|unique:users';
+        }
+
         $validatedData = $request->validate([
             'name'          => 'required',
-            'email'         => 'required|email|unique:users',
+            'email'         => $rules,
             'role'          => 'required',
         ]);
 
